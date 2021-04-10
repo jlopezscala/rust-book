@@ -1,7 +1,7 @@
 use std::io;
-use rand::Rng;
+use rand::Rng; // Random lib
 
-use std::cmp::Ordering; // An Enum like Result (line 28) its variants are Less, Greater, and Equal
+use std::cmp::Ordering; // An Enum like Result (line 31) its variants are Less, Greater, and Equal
 
 fn main() {
     println!("Guess the number!");
@@ -43,8 +43,14 @@ fn main() {
 
         // We are not creating a new variable, guess is going to change to the new value (commonly used
         // to change variable types and not having to declare a new variable
-        let guess: u32 = guess.trim().parse().expect("Please type a number!");
-
+        let guess: u32 = match guess.trim().parse() {
+            // In this case, instead of using except method, we use match to
+            Ok(num) => num,
+            Err(_) => {
+                println!("Please insert a number!");
+                continue; // continues the loop
+            },
+        };
         match guess.cmp(&secret_number) { // similar to switch case?
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
