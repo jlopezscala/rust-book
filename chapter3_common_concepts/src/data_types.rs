@@ -91,11 +91,11 @@ fn tuple_definition() {
     println!("The value of y is: {}", y);
 
     // Tuple values can be accessed by index
-    let five_hundred = x.0;
+    let five_hundred = tup.0;
 
-    let six_point_four = x.1;
+    let six_point_four = tup.1;
 
-    let one = x.2;
+    let one = tup.2;
 }
 
 /*

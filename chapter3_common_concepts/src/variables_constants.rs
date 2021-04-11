@@ -1,4 +1,5 @@
 // Rust is statically typed. All types must be known at compile time
+// Use snake_case to declare variables as it is the convention
 
 
 /* Constants are always immutable, this can't be changed
