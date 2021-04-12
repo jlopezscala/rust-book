@@ -1,4 +1,7 @@
 .idea/
 .DS_Store
 
+hello-cargo/target/
+chapter2_guessing_game/target/
 chapter3_common_concepts/target/
+chapter4_ownership/target/
