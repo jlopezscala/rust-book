@@ -14,30 +14,30 @@ fn main() {
 
     loop { // creates infinite loop
 
-        // let creates a variable
-        // mut stands for mutable
-        // String::new() new is a static method (associated function) of the type String
-        // Associated functions are implemented on types
-        // To summarize, the let mut guess = String::new(); line
-        // has created a mutable variable that is currently bound to a new, empty instance of a String.
+        /* let creates a variable
+           mut stands for mutable
+           String::new() new is a static method (associated function) of the type String
+           Associated functions are implemented on types
+           To summarize, the let mut guess = String::new(); line
+           has created a mutable variable that is currently bound to a new, empty instance of a String. */
         let mut guess = String::new();
 
         io::stdin()
-            // read_line gets a mutable string where to store the user input in this case by keyboard
-            // the string received MUST be mutable
-            // & symbol indicates the argument is a reference
-            // mut is also needed, by default, references are inmutable
+           /*  read_line gets a mutable string where to store the user input in this case by keyboard
+               the string received MUST be mutable
+               & symbol indicates the argument is a reference
+               mut is also needed, by default, references are inmutable */
             .read_line(&mut guess)// Result is what read_line returns from IO package
-            // Result holds either OK or Err.
-            // OK result contains the value in the result
-            // Err will contain an error message
-            // Expect is used to unpack the result. If its an Err type, it will make the program crash
-            // if its an OK type, it will unpack the value and return it
+            /*  Result holds either OK or Err.
+                OK result contains the value in the result
+                Err will contain an error message
+                Expect is used to unpack the result. If its an Err type, it will make the program crash
+                if its an OK type, it will unpack the value and return it
 
-            // FROM RUST DOCS -> ERROR HANDLING
-            // Because this function may panic, its use is generally discouraged. Instead,
-            // prefer to use pattern matching and handle the [Err] case explicitly,
-            // or call unwrap_or, unwrap_or_else, or unwrap_or_default.
+                FROM RUST DOCS -> ERROR HANDLING
+                Because this function may panic, its use is generally discouraged. Instead,
+                prefer to use pattern matching and handle the [Err] case explicitly,
+                or call unwrap_or, unwrap_or_else, or unwrap_or_default. */
 
             .expect("Failed to read line");
 
@@ -52,9 +52,9 @@ fn main() {
             },
         };
         match guess.cmp(&secret_number) { // similar to switch case?
-            Ordering::Less => println!("Too small!"),
+            Ordering::Less => println!("Too small!"), // cmp returns an enum value of type Ordering
             Ordering::Greater => println!("Too big!"),
-            Ordering::Equal => {
+            Ordering::Equal => { // block of code that executes if cmp result is Ordering::Equal
                 println!("You win!");
                 break; //cuts the loop
             }
