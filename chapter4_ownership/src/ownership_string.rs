@@ -75,3 +75,16 @@ fn deep_copy_clone() {
 
     println!("s1 = {}, s2 = {}", s1, s2);
 }
+
+/*
+    Some types implement the Copy trait, no need to use clone() method.
+
+    Types that implement Copy:
+    - All the integer types, such as u32.
+    - The Boolean type, bool, with values true and false.
+    - All the floating point types, such as f64.
+    - The character type, char.
+    - Tuples, if they only contain types that also implement Copy. For example, (i32, i32) implements Copy, but (i32, String) does not.
+
+
+ */
