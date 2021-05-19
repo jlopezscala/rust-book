@@ -73,7 +73,7 @@ fn calculate_length_borrow(s: &String) -> usize { // s is a reference to a Strin
 }
 
 
-fn imposible_append(s: &String) {
+fn impossible_append(some_string: &String) {
     some_string.push_str(", world"); // Failes at compile time cause its borrowed
 }
 
