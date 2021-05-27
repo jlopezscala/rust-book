@@ -32,7 +32,7 @@ fn scope_example() {
         // do stuff with s
     } // this scope is now over, and s is no longer valid
 
-    // When curly bracket is closed, Rust calls `drop` function defined for Strings which
+    // When curly bracket is closed, Rust calls `drop` function defined for Strings
 }
 
 fn stack_vs_heap() {
@@ -85,6 +85,4 @@ fn deep_copy_clone() {
     - All the floating point types, such as f64.
     - The character type, char.
     - Tuples, if they only contain types that also implement Copy. For example, (i32, i32) implements Copy, but (i32, String) does not.
-
-
  */
