@@ -75,10 +75,4 @@ fn debugging() {
             height: 50,
         }
      */
-
 }
-
-
-
-// We can do even better if we add the area function as part of the rectangle Struct
-

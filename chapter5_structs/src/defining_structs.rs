@@ -17,7 +17,7 @@ fn instantiating_a_user() {
 
     println!("User email: {}", user1.email); // Access to object attribute, pretty normal
 
-    //user1.email = String::from("anotheremail@example.com"); nope, user1 this is immutable!
+    //user1.email = String::from("anotheremail@example.com"); nope, user1 is immutable!
 
     let mut user2 = User { // User is intanciated as MUTABLE
         email: String::from("someone@example.com"),
@@ -100,7 +100,6 @@ struct User2 {
     email: String,
     sign_in_count: u64,
     active: bool,
-
     /*
     struct User {
         username: &str, // A Lifetime needs to be specified
